@@ -50,8 +50,7 @@ public class StudentProcess {
                         .forEach(System.out::println);
 
         System.out.println("\nStudents in descending order by last name then first:");
-        studentList
-                .stream().sorted(Comparator.comparing(Student::getLastName)
+        studentList.stream().sorted(Comparator.comparing(Student::getLastName)
                         .thenComparing(Comparator.comparing(Student::getFirstName)).reversed())
                         .forEach(System.out::println);
 
