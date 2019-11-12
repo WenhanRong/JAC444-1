@@ -40,7 +40,8 @@ public class StudentProcess {
 
         //*********** TASK 3 ***********
         System.out.println("\nTASK: 3 \n\n" + "First student who got 50.0 - 100.0: ");
-        System.out.println(studentList.stream().findFirst().get());
+        System.out.println(studentList.stream().sorted(Comparator.comparing(Student::getGrade))
+                .filter(student -> student.getGrade() >= 50.0 && student.getGrade() <= 100.0).findFirst().orElse(null));
 
 
         //*********** TASK 4 ***********
